@@ -19,7 +19,17 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
   use("theprimeagen/harpoon")
   use("mbbill/undotree")
+
+  -- git
   use("tpope/vim-fugitive")
+  use("sindrets/diffview.nvim")
+  use {
+      'lewis6991/gitsigns.nvim',
+      config = function()
+          require('gitsigns').setup()
+      end
+  }
+  use("tpope/vim-rhubarb")
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -59,10 +69,4 @@ return require('packer').startup(function(use)
   use 'ray-x/go.nvim'
   use 'ray-x/guihua.lua'
 
-  use {
-      'lewis6991/gitsigns.nvim',
-      config = function()
-          require('gitsigns').setup()
-      end
-  }
 end)
