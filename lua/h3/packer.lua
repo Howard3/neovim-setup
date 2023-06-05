@@ -49,4 +49,14 @@ return require('packer').startup(function(use)
       'nvim-lualine/lualine.nvim',
       requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+
+  use 'ray-x/go.nvim'
+  use 'ray-x/guihua.lua'
+
+  use {
+      'lewis6991/gitsigns.nvim',
+      config = function()
+          require('gitsigns').setup()
+      end
+  }
 end)
