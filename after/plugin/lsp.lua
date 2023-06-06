@@ -51,4 +51,8 @@ end)
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
 	vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = true })
 
+
+-- more file type associations
+vim.api.nvim_command('au BufRead,BufNewFile *.jsonl set filetype=json')
+
 lsp.setup()
