@@ -5,17 +5,24 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- search the open directory
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- colorscheme
   use 'shaunsingh/moonlight.nvim'
 
+  -- better syntax highlighting
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
+
+  -- quick file re-retrieval
   use("theprimeagen/harpoon")
+
+  -- awesome undo functionality
   use("mbbill/undotree")
 
   -- git
@@ -27,8 +34,9 @@ return require('packer').startup(function(use)
           require('gitsigns').setup()
       end
   }
-  use("tpope/vim-rhubarb")
+  use("tpope/vim-rhubarb") -- github integration for :GBrowse
 
+  -- setup the lsp
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',
@@ -54,11 +62,14 @@ return require('packer').startup(function(use)
 
   use("nvim-tree/nvim-web-devicons")
   use("github/copilot.vim")
+
+  -- status line
   use {
       'nvim-lualine/lualine.nvim',
       requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
+  -- find the errors in your code
   use {
       'folke/trouble.nvim',
       requires = {'nvim-tree/nvim-web-devicons'}
@@ -138,4 +149,18 @@ return require('packer').startup(function(use)
 
   -- indent guides
   use "lukas-reineke/indent-blankline.nvim"
+
+  -- folding
+  use{ 'anuvyklack/pretty-fold.nvim',
+  config = function()
+      require('pretty-fold').setup()
+  end}
+
+  -- preview the code you're about to jump to
+  use {
+      'rmagatti/goto-preview',
+      config = function()
+          require('goto-preview').setup {}
+      end
+  }
 end)
