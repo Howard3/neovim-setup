@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
   }
 
   -- colorscheme
-  use 'shaunsingh/moonlight.nvim'
+  use 'bluz71/vim-nightfly-guicolors'
 
   -- better syntax highlighting
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
