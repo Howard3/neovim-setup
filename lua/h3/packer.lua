@@ -5,6 +5,8 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use 'nvim-lua/plenary.nvim'
+
   -- search the open directory
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -74,6 +76,15 @@ return require('packer').startup(function(use)
       'folke/trouble.nvim',
       requires = {'nvim-tree/nvim-web-devicons'}
   }
+
+  -- debugging
+  -- used by go.nvim
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
+  use 'ChristianChiarulli/neovim-codicons' -- recommended by nvim-dap-ui
+  --use 'leoluz/nvim-dap-go'
 
   -- go
   use('ray-x/go.nvim')
@@ -163,4 +174,16 @@ return require('packer').startup(function(use)
           require('goto-preview').setup {}
       end
   }
+
+  -- refactoring
+  use {
+      'ThePrimeagen/refactoring.nvim',
+      requires = {
+          {'nvim-lua/plenary.nvim'},
+          {'nvim-treesitter/nvim-treesitter'}
+      }
+  }
 end)
+
+
+
