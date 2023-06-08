@@ -10,10 +10,10 @@ lsp.ensure_installed({
 	'tsserver',
 	'eslint',
 	'gopls',
-	'golangci_lint_ls',
-	'dockerls',
-	'lua_ls',
-	'html'
+    'golangci_lint_ls',
+    'dockerls',
+    'lua_ls',
+    'html',
 })
 
 local cmp = require('cmp')
@@ -28,10 +28,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings
 })
-
--- (Optional) Configure lua language server for neovim
--- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
 
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
@@ -54,5 +50,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 
 -- more file type associations
 vim.api.nvim_command('au BufRead,BufNewFile *.jsonl set filetype=json')
+
+-- go-specific modifications, enable snippets
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require('lspconfig').gopls.setup{
+	capabilities = capabilities,
+}
 
 lsp.setup()

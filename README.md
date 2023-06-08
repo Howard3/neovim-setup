@@ -14,4 +14,8 @@ The telescope grep search requires [ripgrep](https://github.com/BurntSushi/ripgr
 to be installed locally. 
 
 ## Go / Structrue
-gotags is required `go get -u github.com/jstemmer/gotags` for [structrue](https://github.com/crusj/structrue-go.nvim) 
+gotags is required 
+```bash
+go install github.com/jstemmer/gotags@latest
+```
+for [structrue](https://github.com/crusj/structrue-go.nvim) 
