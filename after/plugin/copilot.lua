@@ -17,4 +17,5 @@ vim.g.copilot_filetypes = {
     ["gohtml"] = true,
     ["html"] = true,
     ["gitcommit"] = true,
+    ["dockerfile"] = true,
 }
