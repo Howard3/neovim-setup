@@ -21,15 +21,9 @@ vim.keymap.set("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>
 vim.keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", {noremap=true})
 
 -- resize panes easier
--- Increase height of current pane to count lines (default: 20)
-vim.api.nvim_set_keymap('n', '<C-W>+', ':<C-U>execute "res " . (v:count1 > 0 ? v:count1 : 20) . " +1"<CR>', { silent = true })
+-- set height of current pane to count lines (default: 20)
+vim.api.nvim_set_keymap('n', '<C-W>h', ':<C-U>execute "res " . (v:count1 > 0 ? v:count1 : 20) . " +1"<CR>', { silent = true })
 
--- Decrease height of current pane to count lines (default: 20)
-vim.api.nvim_set_keymap('n', '<C-W>-', ':<C-U>execute "res " . (v:count1 > 0 ? v:count1 : 20) . " -1"<CR>', { silent = true })
-
--- Increase width of current pane to count columns (default: 80)
-vim.api.nvim_set_keymap('n', '<C-W>>', ':<C-U>execute "vertical res " . (v:count1 > 0 ? v:count1 : 80) . " +1"<CR>', { silent = true })
-
--- Decrease width of current pane to count columns (default: 80)
-vim.api.nvim_set_keymap('n', '<C-W><', ':<C-U>execute "vertical res " . (v:count1 > 0 ? v:count1 : 80) . " -1"<CR>', { silent = true })
+-- set width of current pane to count columns (default: 80)
+vim.api.nvim_set_keymap('n', '<C-W>w', ':<C-U>execute "vertical res " . (v:count1 > 0 ? v:count1 : 80) . " +1"<CR>', { silent = true })
 
