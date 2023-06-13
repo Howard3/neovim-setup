@@ -20,6 +20,13 @@ return require('packer').startup(function(use)
   -- awesome undo functionality
   use("mbbill/undotree")
 
+  -- register browser
+  use {
+      "AckslD/nvim-neoclip.lua",
+      requires = {
+          {'nvim-telescope/telescope.nvim'},
+      },
+  }
   -- git
   use("tpope/vim-fugitive")
   use("sindrets/diffview.nvim")
@@ -64,6 +71,19 @@ return require('packer').startup(function(use)
       requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
+  -- noob and old man aid
+  use {
+      "folke/which-key.nvim",
+      config = function()
+          vim.o.timeout = true
+          vim.o.timeoutlen = 300
+          require("which-key").setup {
+              -- your configuration comes here
+              -- or leave it empty to use the default settings
+              -- refer to the configuration section below
+          }
+      end
+  }
   -- find the errors in your code
   use {
       'folke/trouble.nvim',
@@ -188,8 +208,6 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
-  --use('folke/twilight.nvim')
-  use 'sunjon/shade.nvim'
   use 'koenverburg/peepsight.nvim'
 end)
 

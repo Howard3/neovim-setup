@@ -27,3 +27,7 @@ vim.api.nvim_set_keymap('n', '<C-W>h', ':<C-U>execute "res " . (v:count1 > 0 ? v
 -- set width of current pane to count columns (default: 80)
 vim.api.nvim_set_keymap('n', '<C-W>w', ':<C-U>execute "vertical res " . (v:count1 > 0 ? v:count1 : 80) . " +1"<CR>', { silent = true })
 
+vim.api.nvim_set_keymap('n', '<leader>reg', ':Telescope neoclip<CR>', {noremap=true})
+
+-- lsp
+vim.api.nvim_set_keymap('n', '<leader>gr', ':lua vim.lsp.buf.references()<CR>', {noremap=true})
