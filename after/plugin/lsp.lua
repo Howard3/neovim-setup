@@ -7,6 +7,8 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.ensure_installed({
+    'bufls',
+    'dockerls',
 	'tsserver',
 	'eslint',
 	'gopls',
@@ -14,6 +16,11 @@ lsp.ensure_installed({
     'dockerls',
     'lua_ls',
     'html',
+    'terraformls',
+    'yamlls',
+    'tailwindcss',
+    'sqlls',
+    'marksman',
 })
 
 local cmp = require('cmp')
