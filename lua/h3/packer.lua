@@ -14,13 +14,6 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  -- colorscheme
-  use 'bluz71/vim-nightfly-guicolors'
-
-  -- better syntax highlighting
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('nvim-treesitter/playground')
-
   -- quick file re-retrieval
   use("theprimeagen/harpoon")
 
@@ -183,6 +176,21 @@ return require('packer').startup(function(use)
           {'nvim-treesitter/nvim-treesitter'}
       }
   }
+
+  -- comments
+  use 'folke/todo-comments.nvim'
+
+  -- styling etc
+  -- colorscheme
+  use 'bluz71/vim-nightfly-guicolors'
+
+  -- better syntax highlighting
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('nvim-treesitter/playground')
+
+  --use('folke/twilight.nvim')
+  use 'sunjon/shade.nvim'
+  use 'koenverburg/peepsight.nvim'
 end)
 
 
