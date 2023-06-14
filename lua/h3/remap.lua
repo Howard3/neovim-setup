@@ -20,6 +20,9 @@ vim.api.nvim_set_keymap(
 vim.keymap.set("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", {noremap=true})
 vim.keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", {noremap=true})
 
+-- trouble
+vim.keymap.set("n", "<leader>tt", "<cmd>TroubleToggle<CR>", {noremap=true})
+
 -- resize panes easier
 -- set height of current pane to count lines (default: 20)
 vim.api.nvim_set_keymap('n', '<C-W>h', ':<C-U>execute "res " . (v:count1 > 0 ? v:count1 : 20) . " +1"<CR>', { silent = true })
@@ -31,3 +34,4 @@ vim.api.nvim_set_keymap('n', '<leader>reg', ':Telescope neoclip<CR>', {noremap=t
 
 -- lsp
 vim.api.nvim_set_keymap('n', '<leader>gr', ':lua vim.lsp.buf.references()<CR>', {noremap=true})
+

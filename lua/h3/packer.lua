@@ -97,7 +97,6 @@ return require('packer').startup(function(use)
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
   use 'ChristianChiarulli/neovim-codicons' -- recommended by nvim-dap-ui
-  --use 'leoluz/nvim-dap-go'
 
   -- go
   use('ray-x/go.nvim')
@@ -174,11 +173,6 @@ return require('packer').startup(function(use)
   -- indent guides
   use "lukas-reineke/indent-blankline.nvim"
 
-  -- folding
-  use{ 'anuvyklack/pretty-fold.nvim',
-  config = function()
-      require('pretty-fold').setup()
-  end}
 
   -- preview the code you're about to jump to
   use {
@@ -209,6 +203,9 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
 
   use 'koenverburg/peepsight.nvim'
+
+  -- folding
+  use 'anuvyklack/pretty-fold.nvim'
 end)
 
 
