@@ -21,6 +21,7 @@ lsp.ensure_installed({
     'tailwindcss',
     'sqlls',
     'marksman',
+    'jsonls',
 })
 
 local cmp = require('cmp')

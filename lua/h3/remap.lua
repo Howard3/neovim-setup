@@ -35,3 +35,5 @@ vim.api.nvim_set_keymap('n', '<leader>reg', ':Telescope neoclip<CR>', {noremap=t
 -- lsp
 vim.api.nvim_set_keymap('n', '<leader>gr', ':lua vim.lsp.buf.references()<CR>', {noremap=true})
 
+-- rest
+vim.api.nvim_set_keymap('n', '<leader>rest', '<Plug>RestNvim<CR>', {noremap=true})
