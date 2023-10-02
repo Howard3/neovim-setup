@@ -4,6 +4,7 @@ vim.g.copilot_filetypes = {
     ["*"] = false,
     ["go"] = true,
     ["php"] = true,
+    ["ocaml"] = true,
     ["sh"] = true,
     ["sql"] = true,
     ["javascript"] = true,
