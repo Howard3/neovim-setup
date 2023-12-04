@@ -9,13 +9,16 @@ return require('packer').startup(function(use)
 
   -- search the open directory
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  -- or                            , branch = '0.1.x',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   -- quick file re-retrieval
-  use("theprimeagen/harpoon")
+  use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+  }
 
   -- awesome undo functionality
   use("mbbill/undotree")
