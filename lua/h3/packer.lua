@@ -161,6 +161,8 @@ return require('packer').startup(function(use)
   -- styling etc
   -- colorscheme
   use 'bluz71/vim-nightfly-guicolors'
+  use 'scottmckendry/cyberdream.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- better syntax highlighting
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -170,7 +172,13 @@ return require('packer').startup(function(use)
 
   -- folding
   use 'anuvyklack/pretty-fold.nvim'
+
+  -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+  use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
+  use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+  use 'romgrk/barbar.nvim'
 end)
+
 
 
 
