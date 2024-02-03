@@ -4,6 +4,7 @@ vim.g.copilot_filetypes = {
     ["*"] = false,
     ["go"] = true,
     ["terraform"] = true,
+    ["tf"] = true,
     ["php"] = true,
     ["ocaml"] = true,
     ["sh"] = true,
