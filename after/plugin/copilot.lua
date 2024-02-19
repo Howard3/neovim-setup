@@ -5,6 +5,7 @@ vim.g.copilot_filetypes = {
     ["go"] = true,
     ["gowork"] = true,
     ["fish"] = true,
+    ["proto"] = true,
     ["terraform"] = true,
     ["tf"] = true,
     ["php"] = true,
