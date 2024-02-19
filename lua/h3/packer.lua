@@ -93,6 +93,11 @@ return require('packer').startup(function(use)
       requires = {'nvim-tree/nvim-web-devicons'}
   }
 
+  -- highlight the signature of the function you're in
+  use {
+   "ray-x/lsp_signature.nvim",
+  }
+
   -- debugging
   -- used by go.nvim
   use 'mfussenegger/nvim-dap'
